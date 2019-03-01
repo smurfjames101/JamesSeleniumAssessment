@@ -9,9 +9,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 
 import com.qa.task2.ParamatizedExcel;
+
 public class ItemCreationTest {
 	WebDriver driver;
 	LandingPage landingPage;
+
 	@Before
 	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Desktop\\chromedriver.exe");
@@ -25,8 +27,9 @@ public class ItemCreationTest {
 	public void teardown() {
 		driver.quit();
 	}
+
 	@Test
-	public void testAddingATask() {		
+	public void testAddingATask() {
 		driver.get(Constants.url);
 		landingPage = PageFactory.initElements(driver, LandingPage.class);
 		landingPage.login();
@@ -34,6 +37,7 @@ public class ItemCreationTest {
 		landingPage.implicit(driver, "name");
 		landingPage.addNewItem();
 	}
+
 	@Test
 	public void testAddingUsersViaExcel() throws Exception {
 		driver.get(Constants.url);
@@ -43,5 +47,4 @@ public class ItemCreationTest {
 		ParamatizedExcel.data();
 	}
 
-	
 }

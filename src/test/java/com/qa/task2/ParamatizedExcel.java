@@ -27,6 +27,7 @@ public class ParamatizedExcel {
 			for (int column = 0; column < sheet.getRow(row).getPhysicalNumberOfCells(); column++) {
 
 				XSSFCell cell = sheet.getRow(row).getCell(column);
+				// changes depending on selected column, to assign each value to an input field
 				switch (column) {
 				case 0: {
 					LandingPage.addUserName(cell.getStringCellValue());
